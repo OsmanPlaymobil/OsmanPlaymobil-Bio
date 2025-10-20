@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OsmanPlaymobil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- Overlay mit "Click to enter" -->
+  <div class="overlay" id="overlay">
+    Click to enter
+  </div>
+
+  <!-- Hauptinhalt -->
+  <div class="content" id="mainContent">
+    <img src="avatar_bild.webp" alt="profilbild" class="avatar_bild">
+    <h1>Osman Plasymobil</h1>
+   <div class="discord-leuchten">
+    <a href="https://discord.gg/kanackenhub" target="_blank" class="button">Kanackenhub DC</a>
+    </div>
+    <div class="fakecrime-leuchten">
+    <a href="https://fakecrime.bio/stizyq" target="_blank" class="fakecrime-button">Fakecrime</a>
+    </div>
+    <div class="youtube-leuchten">
+    <a href="https://www.youtube.com/@OsmanPlaymobil" target="_blank" class="youtube-button">YouTube</a>
+    </div>
+     <audio id="musik" src="japan_trikot.mp3" loop></audio>
+  </div>
+
+  <video autoplay muted loop playsinline id="bg-video">
+  <source src="wehmicha-pashanim.mp4" type="video/mp4">
+ </video>
+
+
+  <script>
+    const overlay = document.getElementById("overlay");
+    const mainContent = document.getElementById("mainContent");
+
+    overlay.addEventListener("click", function () {
+      overlay.classList.add("hidden");         // Overlay ausblenden
+      mainContent.style.filter = "none";       // Blur entfernen
+    });
+  </script>
+
+
+
+
+   <!--einstellungen für die Musik-->
+   <script> // Nur beim ersten Klick wird abgespielt
+   document.body.addEventListener("click", function () { const audio = document.getElementById("musik"); audio.play();
+    }, { once: true }); // { once: true } = nur ein Mal ausführen
+   </script>
+
+</body>
+</html>
+
+
+</body>        
+
+   
