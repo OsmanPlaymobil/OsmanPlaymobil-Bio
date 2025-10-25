@@ -136,6 +136,56 @@
   }
 }
 
+/* Musiksteuerungs-Container */
+.musikControls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);  /* Schwarz mit Transparenz */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optionaler Schatten */
+    z-index: 100;
+}
+
+/* Benutzerdefinierte Steuerelemente */
+.custom-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.control-btn:hover {
+    color: #ff5c5c; /* Farbe beim Hover */
+}
+
+/* Fortschrittsbalken */
+.progress {
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    border: none;
+    height: 5px;
+    cursor: pointer;
+}
+
+/* Lautstärkeregler */
+.volume {
+    width: 80px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    border: none;
+    height: 5px;
+    cursor: pointer;
+}
 
 
 
