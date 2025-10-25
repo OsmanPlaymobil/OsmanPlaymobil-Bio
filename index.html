@@ -28,8 +28,19 @@
     <div class="youtube-leuchten">
     <a href="https://www.youtube.com/@OsmanPlaymobil" target="_blank" class="youtube-button">YouTube</a>
     </div>
-     <audio id="musik" src="japan_trikot.mp3" loop></audio>
   </div>
+
+<!--MusikPannel-->
+<div class="musikControls">
+  <audio id="musik" src="japan_trikot.mp3" loop></audio>
+  <div class="custom-controls">
+    <button id="playPause" class="control-btn">⏯️</button>
+    <input type="range" id="progress" class="progress" value="0" max="100">
+    <input type="range" id="volume" class="volume" value="100" max="100">
+  </div>
+</div>
+
+
 
   <video autoplay muted loop playsinline id="bg-video">
   <source src="wehmicha-pashanim.mp4" type="video/mp4">
@@ -55,6 +66,40 @@
     }, { once: true }); // { once: true } = nur ein Mal ausführen
    </script>
 
+   <script>
+    //MusikPannel Script
+    const audio = document.getElementById("musik");
+    const playPauseButton = document.getElementById("playPause");
+    const progressBar = document.getElementById("progress");
+    const volumeControl = document.getElementById("volume");
+
+// Play/Pause Button
+playPauseButton.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+        playPauseButton.textContent = "❚❚";  // Pausen-Symbol
+    } else {
+        audio.pause();
+        playPauseButton.textContent = "⏯️";  // Play-Symbol
+    }
+});
+
+// Fortschrittsbalken steuern
+audio.addEventListener("timeupdate", () => {
+    const progress = (audio.currentTime / audio.duration) * 100;
+    progressBar.value = progress;
+});
+
+progressBar.addEventListener("input", () => {
+    audio.currentTime = (progressBar.value / 100) * audio.duration;
+});
+
+// Lautstärke steuern
+volumeControl.addEventListener("input", () => {
+    audio.volume = volumeControl.value / 100;
+});
+   </script>
+
 </body>
 </html>
 
@@ -62,3 +107,4 @@
 </body>        
 
    
+
